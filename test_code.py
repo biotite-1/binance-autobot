@@ -181,7 +181,7 @@ class Broker:
         if live and API_KEY and API_SECRET:
             params['apiKey'] = API_KEY
             params['secret'] = API_SECRET
-        self.ex = getattr(ccxt, exchange_name)()(params)
+        self.ex = getattr(ccxt, exchange_name)(params)
         try:
             self.ex.load_markets()
         except Exception as e:
@@ -409,5 +409,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
